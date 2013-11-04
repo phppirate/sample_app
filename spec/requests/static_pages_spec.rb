@@ -8,7 +8,7 @@ describe "Home Page" do
 
     it "should have the right title" do
       visit '/static_pages/home'
-      page.should have_selector('h1',
+      page.should have_selector('title',
                                 :text => "Ruby on Rails Tutorial Sample App | Home")
     end
 end
@@ -21,7 +21,7 @@ describe "Help Page" do
 
   it "should have the right title" do
     visit '/static_pages/help'
-    page.should have_selector('h1',
+    page.should have_selector('title',
                               :text => "Ruby on Rails Tutorial Sample App | Help")
   end
 end
@@ -34,7 +34,7 @@ describe "About Page" do
 
   it "should have the right title" do
     visit '/static_pages/about'
-    page.should have_selector('h1',
+    page.should have_selector('title',
                               :text => "Ruby on Rails Tutorial Sample App | About Us")
   end
 end

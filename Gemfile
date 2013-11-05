@@ -19,7 +19,9 @@ group :assets do
 end
 
 
+gem 'therubyracer'
 gem 'jquery-rails'
+gem 'less-rails-bootstrap'
 
 
 group :test do

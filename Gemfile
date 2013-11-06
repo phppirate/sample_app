@@ -23,8 +23,11 @@ gem 'therubyracer'
 gem 'jquery-rails'
 gem 'less-rails-bootstrap'
 
+# bcrypt-ruby for password encryption
+gem 'bcrypt-ruby', '3.0.1'
 
-group :test do  gem 'capybara', '1.1.2'
+group :test do
+gem 'capybara', '1.1.2'
   #system dependent gems
 end
 

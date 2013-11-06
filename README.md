@@ -1,3 +1,3 @@
 # Ruby on rails tutorial: Sample application
 
-BY: Vaun Podlogar
+BY: Sam Podlogar

@@ -23,6 +23,9 @@ gem 'therubyracer'
 gem 'jquery-rails'
 gem 'less-rails-bootstrap'
 
+#What it's for I don't know but it's factoryGirl
+gem 'factory_girl_rails', '4.1.0'
+
 # bcrypt-ruby for password encryption
 gem 'bcrypt-ruby', '3.0.1'
 

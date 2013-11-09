@@ -1,0 +1,14 @@
+<% provide(:title, "Sign in") %>
+<h1>Sign in</h1>
+<%= form_for(:session, url: sessions_path, :html => {:class => 'form-horizontal col-md-4'}) do |f|%>
+  <%= f.label :email %>
+  <%= f.text_field :email, class: "form-control" %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password, class: "form-control" %>
+  <br/>
+  <%= f.submit "Sign in", class: "btn btn-primary btn-lg" %>
+  <br/>
+  <p>
+  <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+<% end %>

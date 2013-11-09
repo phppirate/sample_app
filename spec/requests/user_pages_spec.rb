@@ -20,18 +20,6 @@ describe "User pages" do
     it { should have_selector('title', text: full_title(user.name)) }
   end
 
-  describe "Fakes" do
-    describe "fake1" do
-      it { should_not have_selector("george", text: "went") }
-    end
-    describe "fake2" do
-      it { should_not have_selector("george", text: "went") }
-    end
-    describe "fake3" do
-      it { should_not have_selector("george", text: "went") }
-    end
-  end
-
   describe "Sign up" do
 
     let(:submit) { "Create my account" }
@@ -68,6 +56,7 @@ describe "User pages" do
 
         it { should have_selector('title', text: user.name) }
         it { should have_selector('div.alert.alert-success', text: "Welcome") }
+        it { should have_link("Sign out") }
       end
     end
   end

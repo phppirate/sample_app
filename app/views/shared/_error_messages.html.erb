@@ -1,22 +1,14 @@
 <% if @user.errors.any? %>
-  <div class="panel-group" id="accordion">
-    <div class="panel panel-danger">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-            The form contains <%= pluralize(@user.errors.count, "error") %> <small class="pull-right">(Click here to view)</small>
-          </a>
-        </h4>
-      </div>
-      <div id="collapseOne" class="panel-collapse collapse in">
-        <div class="panel-body">
-          <% @user.errors.full_messages.each do |m| %>
-            <li><%= m %></li>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <br/>
+<div class="alert alert-danger">Invalid Information!</div>
+<p style="color: red">
+  <ul style="color: red; list-style: none">
+    <% @user.errors.full_messages.each do |m| %>
+      <li><%= m %></li>
+    <% end %>
+  </ul>
+
+</p>
+
+
 <% end %>
 

@@ -34,7 +34,7 @@ describe "User pages" do
       describe "after submition" do
         before { click_button submit }
         it { should have_selector('title', text: 'Sign up') }
-        it { should have_content('error') }
+        it { should have_content('Invalid') }
       end
     end
 
@@ -59,5 +59,44 @@ describe "User pages" do
         it { should have_link("Sign out") }
       end
     end
+  end
+
+  describe "edit" do
+    let(:user) { FactoryGirl.create(:user) }
+    before do
+      sign_in user
+      visit edit_user_path(user)
+    end
+
+    describe "page" do
+      it { should have_selector('h1', text: "Update your profile") }
+      it { should have_selector('title', text: "Edit user") }
+      it { should have_link('Change', text: "http://gravatar.com/emails") }
+    end
+
+    describe "with invalad information" do
+      before { click_button "Save changes"}
+
+      it { should have_selector('div.alert.alert-danger', text: "Invalid") }
+    end
+
+    describe "with valad information" do
+      let(:new_name) { "new name" }
+      let(:new_email) { "new@example.com" }
+      before  do
+        fill_in "Name",         with: new_name
+        fill_in "Email",        with: new_email
+        fill_in "Password",     with: user.password
+        fill_in "Confirmation", with: user.password
+        click_button "Save changes"
+      end
+
+      it { should have_selector('title', text: new_name) }
+      it { should have_link('Sign out', href: signout_path) }
+      it { should have_selector('div.alert.alert-success') }
+      specify { user.reload.name.should == new_name }
+      specify { user.reload.email.should == new_email }
+    end
+
   end
 end

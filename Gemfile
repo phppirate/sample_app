@@ -30,7 +30,9 @@ gem 'factory_girl_rails', '4.1.0'
 gem 'bcrypt-ruby', '3.0.1'
 
 group :test do
-gem 'capybara', '1.1.2'
+  gem 'capybara', '1.1.2'
+  gem 'cucumber-rails', '1.2.1', :require => false
+  gem 'database_cleaner', '0.7.0'
   #system dependent gems
 end
 

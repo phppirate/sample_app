@@ -2,8 +2,8 @@ Feature: Signing in
 
 Scenario: Unsuccessful signin
   Given a user visits the signin page
-  When he submits invalad information
-  Then he should see en error message
+   When he submits invalad information
+   Then he should see en error message
 
 Scenario: Successful signin
   Given a user visits the signin page
